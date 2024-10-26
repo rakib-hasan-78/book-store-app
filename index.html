@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./assets/style/index.css">
 </head>
-<body class="min-vh-100 d-flex align-items-center justify-content-center text-center text-capitalize fw-normal font-poppins">
-    <section id="book-store" class="w-100">
+<body class="min-vh-100 d-flex flex-column align-items-center justify-content-center text-center text-capitalize fw-normal font-poppins">
+    <section id="book-add-input" class="w-100">
         <main class="mx-auto">
             <div class="section-title">
                 <h1 class="fw-bolder text-uppercase">book application</h1>
@@ -38,6 +38,48 @@
                             </form>
                         </div>
                     </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <section id="book-store-table" class="w-100">
+        <main class="mx-auto">
+            <div class="container">
+                <div class="row">
+                    <table class="table mt-5">
+                        <thead>
+                          <tr>
+                            <th scope="col">SL NO.</th>
+                            <th scope="col">ID NO.</th>
+                            <th scope="col">Book's Title</th>
+                            <th scope="col">Book's author</th>
+                            <th scope="col">ISBN Number</th>
+                            <th scope="col">Complete</th>
+                            <th scope="col">edit</th>
+                            <th scope="col">Undo</th>
+                            <th scope="col">delete</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                          </tr> -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </main>
