@@ -16,4 +16,15 @@ input:focus{
 .font-poppins{
     font-family: "Poppins", sans-serif;
 }
-
+.top-20{
+    top:20%;
+}
+.cp{
+    cursor: pointer !important;
+}
+.text-orange{
+    color: orange;
+}
+.x-icon{
+    z-index: 1050;
+}
