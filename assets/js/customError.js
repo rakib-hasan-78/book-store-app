@@ -1,8 +1,8 @@
-export class CustomError {
+export class CustomError extends Error{
     constructor(message) {
         super(message);
         if (Error.captureStackTrace) {
-            Error.captureStackTrace(this,CustomError);
+            Error.captureStackTrace(this, CustomError);
         }
     }
 }

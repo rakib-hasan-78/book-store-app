@@ -29,6 +29,9 @@ export const inputUtilitiesHandlers = () => {
             
             cancelIcon.addEventListener('click', ()=>{
                 input.value = '';
+                input.classList.remove('is-valid', 'is-invalid');
+                spanIcon.classList.remove('text-danger', 'text-success');
+                spanIcon.classList.add('text-primary')
                 cancelIcon.classList.add('d-none');
             });
         }

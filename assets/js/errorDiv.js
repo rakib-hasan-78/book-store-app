@@ -1,7 +1,7 @@
-export const errorManagement = (text) => {
+export const errorManagement = (removeClass, addClass ,text) => {
     let errorDiv = document.getElementById('error-toast');
     if (!errorDiv) {
-        let errorDiv = document.createElement('div');
+        errorDiv = document.createElement('div');
         errorDiv.className = 'alert alert-danger text-danger-subtle w-50 mx-auto d-flex align-items-center justify-content-between shadow-md rounded-3';
         errorDiv.id = `error-toast`;
 
@@ -25,11 +25,20 @@ export const errorManagement = (text) => {
 
 
         /* set error text into this span  */
-        spanText.innerText = text || '';
-        errorDiv.classList.add(addClass);
         errorDiv.classList.remove(removeClass);
+        errorDiv.classList.add(addClass);
+        spanText.innerText = text || '';
 
-
+        /* cancel handler */
+        document.getElementById('error-div-handler').addEventListener('click', () => {
+            errorDiv.classList.remove('d-flex');
+            errorDiv.classList.add('d-none');
+            spanText.innerText = '';
+        })
     }
+
+    errorDiv.classList.remove(removeClass);
+    errorDiv.classList.add(addClass);
+    document.getElementById('error-text').textContent = text || '';
+    
 }
-errorManagement()
