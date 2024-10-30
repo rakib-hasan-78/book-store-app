@@ -4,7 +4,7 @@ import { cancelIconVisibility } from './cancelIcon.js';
 export const inputUtilitiesHandlers = () => {
     
     const containers = document.querySelectorAll('#main-form .input-group');
-    [...containers].forEach(container=>{
+    [...containers].map(container=>{
         const spanIcon = container.querySelector('span i');
         const input = container.querySelector('input');
         const cancelIcon = container.querySelector('.x-icon');
@@ -25,10 +25,14 @@ export const inputUtilitiesHandlers = () => {
 
         /* cancel icon handler */
 
-        cancelIcon.addEventListener('click', ()=>{
-            input.value = '';
-            cancelIcon.classList.add('d-none');
-        });
+        if (cancelIcon) {
+            
+            cancelIcon.addEventListener('click', ()=>{
+                input.value = '';
+                cancelIcon.classList.add('d-none');
+            });
+        }
+
     
     });
 };
