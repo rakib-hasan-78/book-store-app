@@ -8,20 +8,30 @@ export const inputUtilitiesHandlers = () => {
         const spanIcon = container.querySelector('span i');
         const input = container.querySelector('input');
         const cancelIcon = container.querySelector('.x-icon');
-    
-        input.addEventListener('focus', (e)=>{
-            spanIcon.classList.add('text-primary');
-        });
+
+        if (input) {
+            
+            input.addEventListener('focus', (e)=>{
+                if (!input.value && spanIcon) {
+                    spanIcon.classList.add('text-primary');
+                }
+            });
+            
+            /* when input is blur */
+            input.addEventListener('blur', (e)=>{
+                if (document.activeElement !== input && spanIcon) {
+                    if (!input.value) {
+                        spanIcon.classList.remove('text-primary');
+                    }
+                }
+            });
         
-        /* when input is blur */
-        input.addEventListener('blur', (e)=>{
-            spanIcon.classList.remove('text-primary');
-        });
+            /* cancel icon visibility */
+            input.addEventListener('input', (e)=>{
+                cancelIconVisibility(input, cancelIcon);
+            });
+        }
     
-        /* cancel icon visibility */
-        input.addEventListener('input', (e)=>{
-            cancelIconVisibility(input, cancelIcon);
-        });
 
         /* cancel icon handler */
 
