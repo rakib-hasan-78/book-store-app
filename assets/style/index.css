@@ -28,7 +28,6 @@ input:focus{
 .x-icon{
     z-index: 1050;
 }
-.modified-class{
-    cursor:not-allowed;
-    
+.modal {
+    z-index: 1050;
 }

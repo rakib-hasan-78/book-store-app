@@ -1,3 +1,4 @@
+import { basicModal } from './modals.js';
 export const completeBtnHandlers = (tasks) => {
     /* complete button  */
     const rows = document.querySelectorAll('tbody tr');
@@ -57,11 +58,28 @@ export const btnToUndoHandler = (tasks) => {
                 const bookWriter = row.querySelector('td:nth-child(4)');
 
                 /* removing line through */
-                
+
                 bookHeading.classList.remove('text-decoration-line-through');
                 bookWriter.classList.remove('text-decoration-line-through');
                 editedBtn.removeAttribute('disabled');
                 completedBtn.removeAttribute('disabled'); 
+            }
+        })
+    })
+}
+
+/* edit button handler */
+
+export const editBtnHandler = (tasks) => {
+    const rows = document.querySelectorAll('tbody tr');
+    [...rows].map(row=>{
+        const editBtn = row.querySelector('.edit-btn');
+        editBtn.addEventListener('click', (e)=>{
+            e.preventDefault();
+            let rowId = row.getAttribute('id');
+            let task = tasks.find(task=>task.id===rowId);
+            if (task) {
+                basicModal();
             }
         })
     })
