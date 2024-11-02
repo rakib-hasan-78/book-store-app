@@ -80,13 +80,13 @@ export const removeModal = (tasks) => {
     body.append(newElement);
 
     // Close modal on button click
-    let cancel = basicModal.querySelector('.btn-close');
-    closeFunction(cancel, backdrop, basicModal);
+    let cancel = newElement.querySelector('.btn-close');
+    closeFunction(cancel, backdrop, newElement);
     
     
     // Additional close button for the modal
-    let cancelBtn = basicModal.querySelector('.btn-cancel');
-    closeFunction(cancelBtn, backdrop, basicModal);
+    let cancelBtn = newElement.querySelector('.btn-cancel');
+    closeFunction(cancelBtn, backdrop, newElement);
 }
 
 /* modal-dialog modal-dialog-centered */
