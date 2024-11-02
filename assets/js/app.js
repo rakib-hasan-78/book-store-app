@@ -1,4 +1,4 @@
-import { btnToUndoHandler, completeBtnHandlers, editBtnHandler } from "./btnHandlers.js";
+import { btnToUndoHandler, completeBtnHandlers, editBtnHandler, removeBtnHandler } from "./btnHandlers.js";
 import { CustomError } from "./customError.js";
 import { errorManagement } from "./errorDiv.js";
 import { inputUtilitiesHandlers } from "./inputUtilities.js";
@@ -85,6 +85,7 @@ const addToSubmit = () => {
     completeBtnHandlers(tasks); 
     btnToUndoHandler(tasks);
     editBtnHandler(tasks);
+    removeBtnHandler(tasks);
   });
   
 }

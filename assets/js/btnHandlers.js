@@ -1,4 +1,4 @@
-import { basicModal } from './modals.js';
+import { basicModal, removeModal } from './modals.js';
 export const completeBtnHandlers = (tasks) => {
     /* complete button  */
     const rows = document.querySelectorAll('tbody tr');
@@ -82,5 +82,16 @@ export const editBtnHandler = (tasks) => {
                 basicModal(task, tasks);
             }
         })
+    })
+}
+/* remove button handler */
+export const removeBtnHandler = (tasks) => {
+    const rows = document.querySelectorAll('tbody tr');
+    [...rows].map(row=>{
+        const removeBtn = row.querySelector('.remove-btn');
+        removeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            removeModal(tasks);
+        });
     })
 }
