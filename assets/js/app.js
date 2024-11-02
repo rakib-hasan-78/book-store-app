@@ -80,6 +80,15 @@ const addToSubmit = () => {
       `
       tbody.append(row);
     })
+
+    form.reset();
+    bookTitle.classList.remove('is-valid','is-invalid');
+    bookAuthor.classList.remove('is-valid','is-invalid');
+    isbnNumber.classList.remove('is-valid','is-invalid');
+    const xIcons = document.querySelectorAll('.x-icon');
+    [...xIcons].forEach(xIcon=>xIcon.classList.add('d-none'));
+    const icons = document.querySelectorAll('.icon');
+    [...icons].forEach(icon=>icon.classList.remove('text-success'));
     
   }
     completeBtnHandlers(tasks); 

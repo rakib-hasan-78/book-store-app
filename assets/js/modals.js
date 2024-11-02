@@ -51,7 +51,7 @@ export const basicModal = (task, tasks) => {
 
 };
 
-export const removeModal = (tasks) => {
+export const removeModal = (tasks, task, row) => {
 
     const body = document.querySelector('body');
     // Add backdrop for modal
@@ -68,10 +68,10 @@ export const removeModal = (tasks) => {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="fw-bloder">Are  you sure about it ?</p>
+                    <p class="fw-bloder">Do you really want to remove <mark> ID no. ${task.id} </mark> ?</p>
                 </div>
                 <div class="modal-footer d-flex flex-row align-items-center justify-content-center">
-                <button type="button" class="btn btn-primary btn-open">Yes</button>
+                <button type="button" class="btn btn-primary btn-confirm">Yes</button>
                 <button type="button" class="btn btn-secondary btn-cancel">Close</button>
                 </div>
             </div>
@@ -87,6 +87,21 @@ export const removeModal = (tasks) => {
     // Additional close button for the modal
     let cancelBtn = newElement.querySelector('.btn-cancel');
     closeFunction(cancelBtn, backdrop, newElement);
-}
 
-/* modal-dialog modal-dialog-centered */
+
+    // removing the row --->
+    const removeBtn = newElement.querySelector('.btn-confirm');
+    removeBtn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        
+        const index = tasks.indexOf(task);
+        if (index > -1) {
+            tasks.splice(index , 1);
+            row.remove();
+        }
+
+        
+        body.removeChild(backdrop);
+        body.removeChild(newElement);
+    })
+}

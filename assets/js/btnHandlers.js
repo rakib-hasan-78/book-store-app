@@ -62,7 +62,8 @@ export const btnToUndoHandler = (tasks) => {
                 bookHeading.classList.remove('text-decoration-line-through');
                 bookWriter.classList.remove('text-decoration-line-through');
                 editedBtn.removeAttribute('disabled');
-                completedBtn.removeAttribute('disabled'); 
+                completedBtn.removeAttribute('disabled');
+                undoBtn.setAttribute('disabled',true); 
             }
         })
     })
@@ -89,9 +90,12 @@ export const removeBtnHandler = (tasks) => {
     const rows = document.querySelectorAll('tbody tr');
     [...rows].map(row=>{
         const removeBtn = row.querySelector('.remove-btn');
+        let rowId = row.getAttribute('id');
+        let task = tasks.find(task => task.id === rowId);
+
         removeBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            removeModal(tasks);
+            removeModal(tasks, task, row);
         });
     })
 }
