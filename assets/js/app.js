@@ -7,6 +7,7 @@ import { isbnPattern, namePattern } from "./regex.js";
 
 inputUtilitiesHandlers();
 inputValidation();
+
 const addToSubmit = () => {
   // grabbing elements 
   const tableFrame = document.getElementById('table-book-lists');

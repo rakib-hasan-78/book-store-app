@@ -1,7 +1,7 @@
 import { closeFunction } from "./functions.js";
 import { dataUpdatedModal } from "./updatemodal.js";
 
-export const basicModal = () => {
+export const basicModal = (task, tasks) => {
     const body = document.querySelector('body');
     // Add backdrop for modal
     const backdrop = document.createElement('div');
@@ -45,7 +45,7 @@ export const basicModal = () => {
         body.removeChild(basicModal);
         body.removeChild(backdrop);
 
-        dataUpdatedModal();
+        dataUpdatedModal(task, tasks);
         
     })
 

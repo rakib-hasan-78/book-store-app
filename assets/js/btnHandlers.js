@@ -79,7 +79,7 @@ export const editBtnHandler = (tasks) => {
             let rowId = row.getAttribute('id');
             let task = tasks.find(task=>task.id===rowId);
             if (task) {
-                basicModal();
+                basicModal(task, tasks);
             }
         })
     })
